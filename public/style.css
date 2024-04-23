@@ -1,0 +1,774 @@
+:root {
+    --primary-color: #ff512f;
+    --secondary-color: #dd2476;
+    --background-gradient: linear-gradient(-45deg, #1a1919, #343642, #2e303d, #21232e);
+    --text-color: white;
+    --span-clr: rgb(3, 148, 3);
+    --text-shadow-color: rgba(0, 0, 0, 0.5);
+    --button-hover-color: #AD97C9;
+    --button-bg-color: coral;
+    --form-bg-color: #1f1f26;
+    --form-border-color: #43464d;
+    --form-focus-color: #ff6347;
+    --radio-border-color: #ccc;
+    --radio-checked-color: #ff6347;
+    --progress-bar-bg-color: #ffffff;
+    --progress-bar-fill-color: #AD97C9;
+    --footer-text-color: #ffffff;
+  }
+  
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    color: var(--text-color);
+    font-family: "DM Sans", sans-serif;
+    margin: 0 auto;
+    background: var(--background-gradient);
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    background: var(--background-gradient);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+  }
+  
+  button{
+    transition: transform 0.3s ease;
+    text-decoration: none;
+  }
+  
+  button:focus {
+    outline: none; /* Verwijder de standaard focus-outline */
+    box-shadow: none; /* Verwijder eventuele box-shadow */
+  }
+  
+  
+  button:hover {
+    background-color: var(--span-clr); /* Donkerder groene achtergrondkleur bij hover */
+    transform: scale(1.05);
+  }
+  
+  /* Focus-effect */
+  button:focus {
+    box-shadow: 0 0 5px rgba(0,0,0,0.3); /* Licht schaduweffect bij focus */
+  }
+  
+  button:active {
+    transform: scale(0.95); /* Verklein de knop wanneer ingedrukt */
+  }
+  
+  
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  html{
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+  }
+  
+  h1 {
+    font-size: 28px;
+    text-align: center;
+    max-width: 760px;
+    max-height: 76px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  
+  span {
+    color: var(--span-clr);
+  }
+  
+  h2 {
+    font-size: 16px;
+    font-style: italic;
+    text-align: center;
+    color: #dbe9e9;
+    max-width: 700px;
+    max-height: 42px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+  }
+  
+  h3 {
+    font-size: 20px;
+    margin: 0;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .container h2{
+    margin-bottom: 20px;
+  }
+  
+  .container h3{
+    margin-bottom: 10px;
+  }
+  
+  .container-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    width: 500px;
+    height: 30px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-left: -550px;
+    margin-top: 20px;
+  }
+  
+  .login-form-top{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  #logo {
+    font-size: 19px;
+    color: green;
+  }
+  
+  h4{
+    margin-left: 10px;
+    background-color: red;
+  }
+  
+  .login-container {
+    background: linear-gradient(to bottom right, #343642, #19191e);
+    height: 85%;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    margin: auto;
+    width: 90%;
+    max-width: 1600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+  }
+  
+  .login-text {
+    padding: 35px;
+    width: 350px;
+    height: 91.1%;
+    float: right;
+    background-color: var(--form-bg-color); 
+    border-top-right-radius: 10px; 
+    border-bottom-right-radius: 10px; 
+  }
+  
+  .login-container-text {
+    padding: 35px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;  
+    margin-bottom: 15px;
+  }
+  
+  .login-form{
+    margin-top: 50px;
+  }
+  
+  .handprint-img{
+    width: 150px;
+    position: absolute; 
+    top: 0; 
+    left: -15px; 
+    filter: grayscale(100%);
+    transition: filter 5s;
+  }
+  
+  .handprint-img:hover {
+    filter: grayscale(0%) brightness(90%) sepia(100%) hue-rotate(268deg) saturate(180%) contrast(90%);
+  }
+  
+  .handprint-img-stakeholders{
+    width: 150px;
+    position: absolute; 
+    overflow: hidden;
+    top: -5px;
+    right: 0; 
+    filter: grayscale(100%);
+    transition: filter 5s;
+  }
+  
+  .handprint-img-stakeholders:hover {
+    filter: grayscale(0%) brightness(90%) sepia(100%) hue-rotate(268deg) saturate(180%) contrast(90%);
+  }
+  
+  
+  h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  #username {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--form-bg-color);
+    border: 1px solid var(--form-border-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    margin-bottom: 5px; 
+  }
+  
+  #password {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--form-bg-color);
+    border: 1px solid var(--form-border-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  
+  #username:focus {
+    outline: none;
+    border-color: var(--form-focus-color);
+  }
+  
+  #password:focus{
+    outline: none;
+    border-color: var(--form-focus-color);
+  }
+  
+  .login-btn{
+    width: 130px; 
+    height: 40px; 
+    padding: 0;
+    background: linear-gradient(135deg, var(--button-bg-color), var(--secondary-color));
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    margin: 25px auto 80px;
+    display:  block; 
+    transition: all 0.3s ease;
+  }
+  
+  .login-btn:focus{
+    outline: none;
+    box-shadow: 0 0 5px var(--form-focus-color);
+  }
+  
+  .login-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px; 
+    height: 300px; 
+    background: var(--button-hover-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+    z-index: -1;
+  }
+  
+  .login-btn:hover::before {
+    width: 0;
+    height: 0;
+    transition: all 0.5s ease;
+  }
+  
+  .login-btn:hover {
+    transform: translateY(-3px) scale(1.05); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); 
+  }
+  
+  #choosable-stakeholders {
+    position: relative; /* Add this line to make sure the button's absolute positioning is relative to this container */
+    width: 95%;
+    max-width: 850px;
+    margin: 40px auto 0;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .container-stakeholders{
+    max-width: 500px;
+  }
+  
+  fieldset {
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    flex-direction: column; 
+    margin: 20px;
+  }
+  
+  legend {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: flex; 
+    align-items: center;
+    margin-bottom: 10px; 
+    cursor: pointer;
+  }
+  
+  #choosable-stakeholders img{
+    width: 150px;
+  }
+  
+  .text-stakeholders{
+    max-width: 850px ;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  
+  #navbar {
+    background: var(--background-gradient);
+    padding: 0.5em;
+    height: 55px;
+    display: flex;
+    justify-content: space-between; /* Plaats de elementen aan de uiteinden */
+    align-items: center; /* Zorg ervoor dat de elementen verticaal gecentreerd zijn */
+  }
+  
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+  
+  .navbar-menu {
+    margin-right: auto; /* Verplaats de .navbar-menu naar links */
+  }
+  
+  .navbar-item {
+    margin-right: 1rem;
+    color: var(--footer-text-color);
+  }
+  
+  input[type="radio"] {
+    vertical-align: middle;
+  }
+  
+  /* Simplified radio button styling */
+  input[type="radio"] {
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+    margin: 20px;
+    width: 20px; 
+    height: 20px;
+    border: 2px solid var(--radio-border-color);
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: relative; /* Add position relative to parent */
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Changed checked radio button border color */
+  input[type="radio"]:checked {
+    border-color: var(--radio-checked-color);
+  }
+  
+  /* Simplified radio button checked styling */
+  input[type="radio"]::before {
+    content: '';
+    display: block;
+    width: 10px; 
+    height: 10px; 
+    background-color: var(--radio-checked-color); 
+    border-radius: 50%;
+    position: absolute; /* Change position to absolute */
+    top: 50%; /* Adjust to vertically center */
+    left: 50%; /* Adjust to horizontally center */
+    transform: translate(-50%, -50%); /* Adjust to properly center */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Changed radio button checked opacity */
+  input[type="radio"]:checked::before {
+    opacity: 1;
+  }
+  
+  .form-container {
+    position: relative;
+    max-width: 1000px;
+    align-items: center;
+    display: flex;
+    justify-content: center; /* Om het formulier in het midden van de pagina te plaatsen */
+    margin: 0 auto; /* Om de container in het midden van de pagina te plaatsen */
+  }
+  
+  .stakeholder-btn {
+    width: 130px;
+    height: 40px;
+    padding: 0;
+    background: var(--footer-text-color);
+    border: none;
+    border-radius: 20px;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px; /* Hier kun je de gewenste afstand vanaf de onderkant instellen */
+    right: 20px;
+  }
+  
+  
+  .SDGs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  
+  .SDG-pagina{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 120px;
+    margin-bottom: 50px;
+  }
+  
+  #progress-bar-container {
+    width: 100%;
+    height: 19px;
+    background: var(--progress-bar-bg-color);
+    margin-bottom: 40px;
+    border-radius: 19px;
+    overflow: hidden;
+  }
+  
+  #progress-bar {
+    height: 100%;
+    background: var(--progress-bar-bg-color);
+    border-radius: 19px;
+    transition: width 0.5s ease;
+  }
+  
+  #progress-bar.filled{
+    background: var(--span-clr);
+  }
+  
+  .button-container{
+  display: flex;
+  justify-content:space-between;
+  }
+  
+  #submit-button {
+    width: 130px;
+    height: 40px;
+    padding: 0;
+    background: var(--progress-bar-bg-color);
+    border: none;
+    border-radius: 20px;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  #submit-button:hover{
+    background-color: var(--span-clr);
+    transform: scale(1.05);
+  }
+  
+  .back-button {
+    text-decoration: none;
+    width: 130px;
+    height: 40px;
+    padding: 0;
+    background: var(--progress-bar-bg-color);
+    border: none;
+    border-radius: 20px;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  
+  a{
+    color: black;
+  }
+  
+  
+  .important-heading{
+    margin-top: 60px;
+    text-align: center;
+  }
+  
+  #remove-progress-button{
+    display: none;
+  }
+  
+  .clickable-image {
+    width: 87.5px;
+    height: auto;
+    cursor: pointer;
+    margin: 0.2em;
+    transition: transform 0.3s ease-in-out; 
+    border-radius: 5px;
+  }
+  
+  .clickable-image.selected {
+    box-shadow: 0 0 5px 3px rgba(0, 255, 0, 0.7); /* Groene gloed */
+  }
+  
+  
+  .static-image {
+    width: 75px !important;
+    height: auto;
+    margin:  0.19em;
+    border-radius: 5px;
+  }
+  
+  .social-icons i:hover{
+    transform: scale(1.2);
+    color: var(--button-hover-color);
+  }
+  
+  .container-sdg {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+    max-width: 1000px;
+  }
+  
+  .container-sdg-login {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 500px;
+    margin: auto;
+  }
+  
+  
+  input[type="radio"] {
+    margin: 0;
+    margin-right: 20px;
+    padding: 0;
+    box-sizing: border-box; 
+    display: inline-block; 
+  }
+  
+  .vragenlijst-btn {
+    width: 130px;
+    height: 40px;
+    padding: 0;
+    background: var(--progress-bar-bg-color);
+    border: none;
+    border-radius: 20px;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  
+  
+  /*footer*/
+  .footer-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .social-icons li {
+    display: inline-block;
+    margin-right: 9.5px;
+  }
+  
+  .social-icons li:last-child {
+    margin-right: 0;
+  }
+  
+  .social-icons a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 19px;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+  }
+  
+  .footer-bottom {
+    margin-top: 19px;
+    text-align: center;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+  }
+  
+  .vragenlijst {
+    margin-top: 50px;
+    max-width: 850px;
+    margin-left: auto; /* Automatische linkermarge */
+    margin-right: auto; /* Automatische rechtermarge */
+  }
+  
+  .item img {
+    width: 130px;
+    height: 130px;
+    margin-right: 15px;
+  }
+  
+  .item{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  .chosen-items{
+    max-width: 750px;
+    margin: auto;
+  }
+  
+  .vragenlijst-buttons{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between; 
+    margin-bottom: 50px;
+  }
+  
+  /*Fade effect*/
+  
+  @keyframes fadeInFromTop {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInFromLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-500px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeInFromRight {
+    from{
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to{
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeInFromBottom {
+    from {
+      opacity: 0;
+      transform: translateY(80px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /*Media queries*/
+  
+  @media (max-width: 999px) {
+    h1{
+      font-size: x-large;
+    }
+    h2{
+      font-size: large;
+    }
+    h3{
+      font-size: large;
+    }
+    .static-image{
+      width: 65px;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .static-image{
+      width: 50px;
+    }
+  }
+  
+  @media (max-width: 640px){
+    h2,h3{
+      font-size: medium ;
+      margin: 10px;
+      margin-top: 10px;
+    }
+  }
+  
+  @media (max-width: 571px) {
+    .welcome-container{
+      display: none;
+    }
+  }
+  
+  .work-in-progress{
+    width: 400px;
+    padding: 50px 50px 50px 50px;
+  }
+  
+  .welcome-container{
+    margin: auto;
+  }

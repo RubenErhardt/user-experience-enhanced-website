@@ -1,0 +1,80 @@
+<%- include('./partials/head') %>
+
+<nav id="navbar">
+    <div class="navbar-item">
+        <form action="/" method="get">
+            <button class="back-button" tabindex="1">Terug naar Inloggen</button>
+        </form>
+    </div>
+    <div class="navbar-brand">
+        <span class="navbar-item" tabindex="2">U bent nu ingelogd als: Bedrijf X</span>
+    </div>
+    <div class="navbar-menu">
+        <div class="navbar-end">
+        </div>
+    </div>
+</nav>
+
+<div class="text-stakeholders">
+    <h1 tabindex="3">Kies een van deze stakeholders waar jij wilt gaan checken wat hun <span>HANDPRINT/FOOTPRINT</span> is. 1/4</h1>
+    <h2 tabindex="4">Vergeet niet dat je altijd kunt teruggaan om een andere stakeholder aan te klikken.</h2>
+</div>
+
+<div class="form-container">
+    <section id="choosable-stakeholders" tabindex="5">
+        <fieldset required>
+            <% stakeholdersData.forEach((item, index) => { %>
+                <label tabindex="<%= 6 + index %>">
+                    <input type="radio" name="chosenItem" value="<%= item.name %>">
+                    <%= item.name %>
+                </label>
+            <% }); %>
+        </fieldset>
+
+        <div class="container-stakeholders">
+            <% sdgsData.forEach((item, index) => { %>
+                <% const currentItem = sdgsData[index]; %>
+                <img src="https://fdnd-agency.directus.app/assets/<%= item.icon %>" width="100" height="100" class="static-image" alt="SDG <%= index + 1 %> <%= currentItem.description %>" tabindex="<%= 15 + index %>">
+            <% }); %>   
+        </div>   
+    </section>
+    <button class="stakeholder-btn" tabindex="25">Naar de SDG's!&#8594;</button>
+</div>
+
+
+
+<div class="SDG-pagina">
+    <main>
+      <div class="SDGs">
+      <div class="container">
+        <h1 tabindex="3">Aan welke SDG’s wordt een <span>positieve</span> bijdrage geleverd doordat deze mensen bij jouw bedrijf werken? * 2/4</h1>
+        <h2 tabindex="4">Denk bijvoorbeeld aan het feit dat jouw bedrijf loon betaalt, waardoor SDG 1 en 2 worden geholpen. Of kijk naar de arbeidsomstandigheden (bureau, stoel, licht, werktijden) waarmee SDG 3 wordt geholpen.</h2>
+      
+        <h3 class="important-heading" tabindex="5">Kies <span>MINIMAAL</span> 3 SDG's voor jouw stakeholder</h3>
+    
+        <div class="container-sdg" tabindex="6">
+          <% data.forEach((item, index) => { %>
+            <img src="https://fdnd-agency.directus.app/assets/<%= item.icon %>" width="100" height="100" class="clickable-image" tabindex="<%= 7 + index %>" aria-label="Selecteer SDG <%= index + 1 %>">
+          <% }); %>
+        </div>
+    
+        <div id="progress-bar-container" tabindex="24">
+          <div id="progress-bar" tabindex="25"></div>
+        </div>
+    
+        <div class="button-container">
+            <button class="back-button" tabindex="26">
+                <a href="#navbar" style="text-decoration: none;">Back to stakeholders</a>
+              </button>
+              
+              <form action="/vragenlijst" method="post">
+                <button id="submit-button" tabindex="27" type="submit">Kies deze sdg's</button>
+            </form>
+        </div>
+      </div>
+      </div>
+    </main>
+
+<%- include('./partials/foot') %>
+
+

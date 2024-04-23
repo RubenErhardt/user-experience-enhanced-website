@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
     
     images.forEach(image => {
         image.addEventListener('click', function() {
-            console.log('Afbeelding geklikt');
             // Toggle de 'selected' klasse
             this.classList.toggle('selected');
         });
@@ -24,8 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 selectedImages.push(image.getAttribute('src'));
             }
         });
-        
+
         console.log('Geselecteerde afbeeldingen:', selectedImages);
+        
         fetch('/Vragenlijst', {
             method: 'POST',
             headers: {
@@ -41,3 +41,5 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+

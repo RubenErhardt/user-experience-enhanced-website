@@ -47,6 +47,17 @@ app.get('/Stakeholder-SDG', async (req, res) => {
     res.render('Stakeholder-SDG', { stakeholdersData, sdgsData, data });
 });
 
+
+
+app.get('/Vragenlijst', async (req, res) => {
+    const selectedImages = req.query.selectedImages || [];
+    const apiUrl = 'https://fdnd-agency.directus.app/items/hf_sdgs';
+    const response = await fetchJson(apiUrl);
+    const data = response.data || [];
+    res.render('Vragenlijst', { data: data, selectedImages: selectedImages });
+});
+
+
 // Render questionnaire page
 app.post('/Vragenlijst', async (req, res) => {
     const selectedImages = req.body.selectedImages || [];
@@ -54,8 +65,9 @@ app.post('/Vragenlijst', async (req, res) => {
     const apiUrl = 'https://fdnd-agency.directus.app/items/hf_sdgs';
     const response = await fetchJson(apiUrl);
     const data = response.data || [];
-    res.render('Vragenlijst', { data, selectedImages });
+    res.render('Vragenlijst', { data:data, selectedImages:selectedImages });
 });
+
 
 
 app.listen(app.get('port'), () => {

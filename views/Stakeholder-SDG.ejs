@@ -6,13 +6,6 @@
             <button class="back-button" tabindex="1">Terug naar Inloggen</button>
         </form>
     </div>
-    <div class="navbar-brand">
-        <span class="navbar-item" tabindex="2">U bent nu ingelogd als: Bedrijf X</span>
-    </div>
-    <div class="navbar-menu">
-        <div class="navbar-end">
-        </div>
-    </div>
 </nav>
 
 <div class="text-stakeholders">
@@ -22,11 +15,11 @@
 
 <div class="form-container">
     <section id="choosable-stakeholders" tabindex="5">
-        <fieldset required>
+        <fieldset>
             <% stakeholdersData.forEach((item, index) => { %>
                 <label tabindex="<%= 6 + index %>">
                     <input type="radio" name="chosenItem" value="<%= item.name %>">
-                    <%= item.name %>
+                    <%= item.name %> (<%= item.type %>)
                 </label>
             <% }); %>
         </fieldset>
@@ -38,12 +31,14 @@
             <% }); %>   
         </div>   
     </section>
-    <button class="stakeholder-btn" tabindex="25">Naar de SDG's!&#8594;</button>
+    <button class="stakeholder-btn" id="sdgButton" tabindex="25">
+        <a href="#SDG-pagina" style="text-decoration: none;">Naar de SDG's</a>
+    </button>
 </div>
 
 
 
-<div class="SDG-pagina">
+<div class="SDG-pagina" id="SDG-pagina">
     <main>
       <div class="SDGs">
       <div class="container">
@@ -57,10 +52,7 @@
             <img src="https://fdnd-agency.directus.app/assets/<%= item.icon %>" width="100" height="100" class="clickable-image" tabindex="<%= 7 + index %>" aria-label="Selecteer SDG <%= index + 1 %>">
           <% }); %>
         </div>
-    
-        <div id="progress-bar-container" tabindex="24">
-          <div id="progress-bar" tabindex="25"></div>
-        </div>
+
     
         <div class="button-container">
             <button class="back-button" tabindex="26">

@@ -326,7 +326,7 @@
   .container-stakeholders{
     max-width: 500px;
   }
-  
+
   fieldset {
     border: none;
     display: flex;
@@ -435,6 +435,7 @@
     display: flex;
     justify-content: center; /* Om het formulier in het midden van de pagina te plaatsen */
     margin: 0 auto; /* Om de container in het midden van de pagina te plaatsen */
+    margin-bottom: 200px;
   }
   
   .stakeholder-btn {
@@ -469,7 +470,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 120px;
-    margin-bottom: 50px;
+    margin-bottom: 200px;
   }
   
   #progress-bar-container {

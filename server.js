@@ -45,19 +45,24 @@ app.get('/Stakeholder-SDG', async (req, res) => {
 
     res.render('Stakeholder-SDG', { stakeholdersData, sdgsData, data });
 });
-
 // Handle questionnaire page GET request
-app.get('/vragenlijst', async (req, res) => {
+app.get('/Vragenlijst', async (req, res) => {
     const apiUrl = 'https://fdnd-agency.directus.app/items/hf_sdgs';
     const response = await fetchJson(apiUrl);
     const data = response.data || [];
-    res.render('vragenlijst', { data });
+    res.render('Vragenlijst', { data });
 });
 
-// Render questionnaire page
-app.post('/vragenlijst', async (req, res) => {
-    res.redirect('/vragenlijst'); // Redirect to the questionnaire page
+app.post('/Vragenlijst', async (req, res) => {
+    const selectedImages = req.body.selectedImages || []; // Stel een lege array in als selectedImages niet is gedefinieerd
+    console.log('Ontvangen selectedImages:', selectedImages); // Toegevoegd voor debugging
+    const apiUrl = 'https://fdnd-agency.directus.app/items/hf_sdgs';
+    const response = await fetchJson(apiUrl);
+    const data = response.data || [];
+    res.render('Vragenlijst', { data, selectedImages });
 });
+
+
 
 
 

@@ -1,28 +1,7 @@
 <%- include('./partials/head') %>
-
-<nav id="navbar">
-  <div class="navbar-item">
-      <form action="/" method="get">
-          <button class="back-button" tabindex="1">Terug naar Inloggen</button>
-      </form>
-  </div>
-  <div class="navbar-brand">
-      <span class="navbar-item" tabindex="2">U bent nu ingelogd als: Bedrijf X</span>
-  </div>
-  <div class="navbar-menu">
-      <div class="navbar-end">
-      </div>
-  </div>
-</nav>
-<div class="vragenlijst">
-  <h1 tabindex="3">Kan je per SDG op een schaal van 1/5 aangeven hoe groot de <span>positieve</span> bijdrage is? 3/4</h1>
-  <h2 tabindex="4">Denk hier heel zorgvuldig over na, dit is belangrijk voor de uiteindelijke uitslag.</h2>
-      <section class="chosen-items">
-      </section>
-  <div class="vragenlijst-buttons">
-    <form action="/Stakeholder-SDG" method="get">
-      <button class="back-button" tabindex="35">Back</button>
-    </form>
-  </div>
-</div>
+<h1>Vragenlijst</h1>
+    
+<% selectedImages.forEach(imageUrl => { %>
+    <img src="<%= imageUrl %>" width="100" class="selected-img">
+<% }); %>
 <%- include('./partials/foot') %>

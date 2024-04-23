@@ -22,6 +22,8 @@
   "homepage": "https://github.com/fdnd-task/user-experience-enhanced-website#readme",
   "dependencies": {
     "ejs": "^3.1.9",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "helpers": "^0.0.6",
+    "json-fetch-helpers": "^1.0.1"
   }
 }

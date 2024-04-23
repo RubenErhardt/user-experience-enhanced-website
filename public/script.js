@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll('.clickable-image');
     const submitButton = document.getElementById('submit-button');
+    let selectedImages = []; // Declaring selectedImages here
     
     images.forEach(image => {
         image.addEventListener('click', function() {
@@ -12,7 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
     
     submitButton.addEventListener('click', function(event) {
         event.preventDefault(); // Voorkom dat het formulier standaardgedrag uitvoert
-        const selectedImages = [];
+        
+        // Reset selectedImages before processing
+        selectedImages = [];
         
         // Loop door alle afbeeldingen en controleer welke zijn geselecteerd
         images.forEach(image => {
@@ -34,12 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (response.ok) {
                 // Redirect de gebruiker naar de vragenlijstpagina
                 window.location.href = '/Vragenlijst';
-            } else {
-                console.error('Er is een probleem opgetreden bij het verzenden van de gegevens');
             }
-        })
-        .catch(error => {
-            console.error('Er is een fout opgetreden:', error);
         });
     });
 });

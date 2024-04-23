@@ -52,17 +52,14 @@ app.get('/Vragenlijst', async (req, res) => {
     const data = response.data || [];
     res.render('Vragenlijst', { data });
 });
-
 app.post('/Vragenlijst', async (req, res) => {
-    const selectedImages = req.body.selectedImages || []; // Stel een lege array in als selectedImages niet is gedefinieerd
-    console.log('Ontvangen selectedImages:', selectedImages); // Toegevoegd voor debugging
+    const selectedImages = req.body.selectedImages || [];
+    console.log('Ontvangen selectedImages:', selectedImages);
     const apiUrl = 'https://fdnd-agency.directus.app/items/hf_sdgs';
     const response = await fetchJson(apiUrl);
     const data = response.data || [];
-    res.render('Vragenlijst', { data, selectedImages });
+    res.render('Vragenlijst', { data, selectedImages }); // Doorgeven van selectedImages aan de EJS-sjabloon
 });
-
-
 
 
 

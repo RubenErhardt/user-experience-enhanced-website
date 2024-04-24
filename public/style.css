@@ -177,7 +177,7 @@
   .login-text {
     padding: 35px;
     width: 350px;
-    height: 91.1%;
+    height: 88%;
     float: right;
     background-color: var(--form-bg-color); 
     border-top-right-radius: 10px; 
@@ -193,7 +193,7 @@
   }
   
   .login-form{
-    margin-top: 140px;
+    margin-top: 100px;
   }
   
   .handprint-img{

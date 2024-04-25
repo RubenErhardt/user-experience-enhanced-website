@@ -1,6 +1,14 @@
 <%- include('./partials/head') %>
-
+<nav id="navbar">
+    <div class="navbar-item">
+        <form action="/" method="get">
+            <button class="back-button" tabindex="1">Terug naar Inloggen</button>
+        </form>
+    </div>
+</nav>
+  
 <div class="selected-images-container">
+    <% console.log("Geselecteerde afbeeldingen:", selectedImages); %>
     <% if (selectedImages && selectedImages.length > 0) { %>
         <h3>Geselecteerde afbeeldingen:</h3>
         <ul>
@@ -14,5 +22,11 @@
 </div>
 
 
+<div class="slider-container">
+    <input type="range" min="-5" max="5" value="0" class="slider" id="mySlider">
+    <p>Score: <span id="scoreDisplay">0</span></p>
+</div>
 
-<%- include('./partials/foot') %>
+<form action="/Stakeholder-SDG" method="get">
+    <button class="back-button" tabindex="1">Terug naar Stakeholders</button>
+</form>

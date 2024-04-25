@@ -35,10 +35,16 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(response => {
             if (response.ok) {
-                // Redirect de gebruiker naar de vragenlijstpagina
-                window.location.href = '/Vragenlijst';
+                // Redirect de gebruiker naar de vragenlijstpagina met de geselecteerde afbeeldingen als queryparameters
+                window.location.href = '/Vragenlijst?selectedImages=' + encodeURIComponent(JSON.stringify(selectedImages));
+            }
+            // Voeg eventueel anders logica toe voor het geval de POST-request niet succesvol is
+            // bijvoorbeeld: toon een foutmelding aan de gebruiker
+            else {
+                console.error('Er is een fout opgetreden bij het verwerken van de POST-request');
             }
         });
+        
     });
 });
 

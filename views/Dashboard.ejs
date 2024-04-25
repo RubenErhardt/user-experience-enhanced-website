@@ -1,0 +1,10 @@
+<% if (sliderValues && sliderValues.length > 0) { %>
+    <h3>Ontvangen slider waarden:</h3>
+    <ul>
+        <% sliderValues.forEach((value, index) => { %>
+            <li>Slider <%= index + 1 %>: <%= value %></li>
+        <% }); %>
+    </ul>
+<% } else { %>
+    <p>Geen slider waarden ontvangen.</p>
+<% } %>

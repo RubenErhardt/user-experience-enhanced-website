@@ -47,23 +47,29 @@ app.get('/Stakeholder-SDG', async (req, res) => {
     res.render('Stakeholder-SDG', { stakeholdersData, sdgsData, data });
 });
 
+// Render questionnaire page
 app.get('/Vragenlijst', async (req, res) => {
-    const selectedImages = req.query.selectedImages || [];
+    const selectedImages = req.query.selectedImages ? JSON.parse(req.query.selectedImages) : [];
     const apiUrl = 'https://fdnd-agency.directus.app/items/hf_sdgs';
     const response = await fetchJson(apiUrl);
     const data = response.data || [];
     res.render('Vragenlijst', { data: data, selectedImages: selectedImages });
 });
 
-
-// Render questionnaire page
+// Handle form submission for questionnaire page
 app.post('/Vragenlijst', async (req, res) => {
     const selectedImages = req.body.selectedImages || [];
     console.log('Ontvangen selectedImages:', selectedImages);
     const apiUrl = 'https://fdnd-agency.directus.app/items/hf_sdgs';
     const response = await fetchJson(apiUrl);
     const data = response.data || [];
-    res.render('Vragenlijst', { data:data, selectedImages:selectedImages });
+    res.render('Vragenlijst', { data: data, selectedImages: selectedImages });
+});
+
+// Handle form submission for questionnaire page
+app.post('/dashboard', async (req, res) => {
+    const sliderValues = req.body.sliderValues || [];
+    res.render('dashboard', { sliderValues: sliderValues });
 });
 
 

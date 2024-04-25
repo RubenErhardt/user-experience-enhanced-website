@@ -58,15 +58,19 @@
             <button class="back-button" tabindex="26">
                 <a href="#navbar" style="text-decoration: none;">Back to stakeholders</a>
               </button>
+
+              <form action="/vragenlijst" method="post">
+                <button id="submit-button" tabindex="27" type="submit">Kies deze sdg's</button>
+            </form>
             
         </div>
+
+        <div id="success-message" style="display: none;">Formulier succesvol verzonden!</div>
+
+
       </div>
       </div>
     </main>
-
-    <form action="/vragenlijst" method="post">
-        <button id="submit-button" tabindex="27" type="submit">Kies deze sdg's</button>
-    </form>
 
 <%- include('./partials/foot') %>
 

@@ -66,6 +66,13 @@ app.post('/Vragenlijst', async (req, res) => {
     res.render('Vragenlijst', { data: data, selectedImages: selectedImages });
 });
 
+// Handle form submission for questionnaire page
+app.post('/dashboard', async (req, res) => {
+    const sliderValues = req.body.sliderValues || [];
+    res.render('dashboard', { sliderValues: sliderValues });
+});
+
+
 app.listen(app.get('port'), () => {
     console.log(`Applicatie gestart op http://localhost:${app.get('port')}`);
 });

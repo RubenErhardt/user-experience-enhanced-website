@@ -6,26 +6,26 @@
         </form>
     </div>
 </nav>
+
+<h1>Kan je per SDG op een schaal van -5-5 aangeven hoe groot de <span>positieve</span> bijdrage is?</h1>
+<h2>Denk hier heel zorgvuldig over na, dit is belangrijk voor de uiteindelijke uitslag.</h2>
   
-<div class="selected-images-container">
-    <% console.log("Geselecteerde afbeeldingen:", selectedImages); %>
-    <% if (selectedImages && selectedImages.length > 0) { %>
-        <h3>Geselecteerde afbeeldingen:</h3>
-        <ul>
-            <% selectedImages.forEach(image => { %>
-                <li><img src="<%= image %>" alt="Selected Image"></li>
-            <% }); %>
-        </ul>
-    <% } else { %>
-        <p>Geen afbeeldingen geselecteerd.</p>
-    <% } %>
-</div>
+<form action="/dashboard" method="POST" class="Geselecteerde-afbeeldingen"> <!-- Formulier toegevoegd -->
+    <h3>Geselecteerde afbeeldingen:</h3>
+    <ul>
+        <% selectedImages.forEach((image, index) => { %>
+            <li>
+                <img src="<%= image %>" width="100" height="100" alt="Selected Image">
+                <div class="slider-container">
+                    <input type="range" min="-5" max="5" value="0" class="slider" name="sliderValues[]"> <!-- name attribuut toegevoegd -->
+                    <p>Score: <span class="scoreDisplay">0</span></p> <!-- class in plaats van id -->
+                </div>   
+            </li>
+        <% }); %>
+    </ul>
+    <button type="submit">Verzenden naar Dashboard</button> <!-- Verzendknop toegevoegd -->
+</form>
 
-
-<div class="slider-container">
-    <input type="range" min="-5" max="5" value="0" class="slider" id="mySlider">
-    <p>Score: <span id="scoreDisplay">0</span></p>
-</div>
 
 <form action="/Stakeholder-SDG" method="get">
     <button class="back-button" tabindex="1">Terug naar Stakeholders</button>

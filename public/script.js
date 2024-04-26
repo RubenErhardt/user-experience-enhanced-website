@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const images = document.querySelectorAll('.clickable-image');
     const submitButton = document.getElementById('submit-button');
-    let selectedImages = []; // Declaring selectedImages here
     const sliders = document.querySelectorAll('.slider');
     const radioButtons = document.querySelectorAll('input[type="radio"]');
     const sdgButton = document.getElementById('sdgButton');
@@ -11,22 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hide the second part of the page initially
     sdgSection.style.display = 'none';
 
-    // Voor elke slider voeg een eventlistener toe
-    sliders.forEach(slider => {
-        // Voeg een eventlistener toe voor het veranderen van de waarde van de slider
-        slider.addEventListener('input', function() {
-            // Zoek de bijbehorende scoreDisplay
-            const scoreDisplay = this.parentElement.querySelector('.scoreDisplay');
-            // Bijwerken van de tekst van de scoreDisplay met de waarde van de slider
-            scoreDisplay.textContent = this.value;
-        });
-    });
-
     // Voeg event listeners toe aan de radio buttons
     radioButtons.forEach(function(radioButton) {
         radioButton.addEventListener('click', function() {
-            // Store the selected value (if needed)
-            const selectedValue = this.value;
         });
     });
 
@@ -52,8 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 selectedImages.push(image.getAttribute('src'));
             }
         });
-
-        console.log('Geselecteerde afbeeldingen:', selectedImages);
         
         fetch('/Vragenlijst', {
             method: 'POST',

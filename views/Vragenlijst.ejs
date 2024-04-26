@@ -10,9 +10,9 @@
     <ul>
         <% selectedImages.forEach((image, index) => { %>
             <li>
-                <img src="<%= image %>" width="100" height="100" alt="Selected Image">
+                <img src="<%= image %>" width="100" height="100" alt="Selected Image" loading="lazy">
                 <div class="slider-container">
-                    <input type="range" min="-5" max="5" value="0" class="slider" name="sliderValues[]"> <!-- name attribuut toegevoegd -->
+                    -5<input type="range" min="-5" max="5" value="0" class="slider" name="sliderValues[]"> 5<!-- name attribuut toegevoegd -->
                     <p>Score: <span class="scoreDisplay">0</span></p> <!-- class in plaats van id -->
                 </div>   
             </li>

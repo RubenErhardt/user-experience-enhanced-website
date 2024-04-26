@@ -1,12 +1,6 @@
 <%- include('./partials/head') %>
-
-<nav id="navbar">
-    <div class="navbar-item">
-        <form action="/" method="get">
-            <button class="back-button" tabindex="1">Terug naar Inloggen</button>
-        </form>
-    </div>
-</nav>
+<%- include('./partials/foot') %>
+<%- include('./partials/navbar') %>
 
 <div class="text-stakeholders">
     <h1 tabindex="3">Kies een van deze stakeholders waar jij wilt gaan checken wat hun <span>HANDPRINT/FOOTPRINT</span> is. 1/4</h1>
@@ -16,6 +10,7 @@
 <div class="form-container">
     <section id="choosable-stakeholders" tabindex="5">
         <fieldset>
+            <h2>Kies uit een van de volgende stakeholders:</h2>
             <% stakeholdersData.forEach((item, index) => { %>
                 <label tabindex="<%= 6 + index %>">
                     <input type="radio" name="chosenItem" value="<%= item.name %>">
@@ -35,6 +30,11 @@
         <a href="#SDG-pagina" style="text-decoration: none;">Naar de SDG's</a>
     </button>
 </div>
+
+<div id="customAlert" style="display: none;" class="custom-alert">
+    Kies alsjeblieft een stakeholder.
+</div>
+
 
 
 
@@ -64,10 +64,6 @@
             </form>
             
         </div>
-
-        <div id="success-message" style="display: none;">Formulier succesvol verzonden!</div>
-
-
       </div>
       </div>
     </main>

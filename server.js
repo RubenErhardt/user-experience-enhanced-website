@@ -26,6 +26,11 @@ app.get('/', async (req, res) => {
     res.redirect('/'); // Redirect to the login page
 });
 
+app.get('/signup', async (req, res) => {
+    res.render('signup'); // Render the signup.ejs view file
+});
+
+
 // Render stakeholder page
 app.get('/Stakeholder-SDG', async (req, res) => {
     const stakeholderApiUrl = 'https://fdnd-agency.directus.app/items/hf_stakeholders';

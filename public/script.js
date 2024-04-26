@@ -1,10 +1,15 @@
-// Your existing JavaScript code
-
 document.addEventListener('DOMContentLoaded', function() {
     const images = document.querySelectorAll('.clickable-image');
     const submitButton = document.getElementById('submit-button');
     let selectedImages = []; // Declaring selectedImages here
     const sliders = document.querySelectorAll('.slider');
+    const radioButtons = document.querySelectorAll('input[type="radio"]');
+    const sdgButton = document.getElementById('sdgButton');
+    const sdgSection = document.getElementById('SDG-pagina');
+    const customAlert = document.getElementById('customAlert');
+
+    // Hide the second part of the page initially
+    sdgSection.style.display = 'none';
 
     // Voor elke slider voeg een eventlistener toe
     sliders.forEach(slider => {
@@ -17,6 +22,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Voeg event listeners toe aan de radio buttons
+    radioButtons.forEach(function(radioButton) {
+        radioButton.addEventListener('click', function() {
+            // Store the selected value (if needed)
+            const selectedValue = this.value;
+        });
+    });
+
+    // Voeg event listener toe aan de afbeeldingen
     images.forEach(image => {
         image.addEventListener('click', function() {
             // Toggle de 'selected' klasse
@@ -24,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Voeg event listener toe aan de submit button
     submitButton.addEventListener('click', function(event) {
         event.preventDefault(); // Voorkom dat het formulier standaardgedrag uitvoert
         
@@ -57,26 +72,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
     });
-});
 
-// Integrating the code for the SDG's section navigation
-
-document.addEventListener('DOMContentLoaded', function() {
-    const radioButtons = document.querySelectorAll('input[type="radio"]');
-    const sdgButton = document.getElementById('sdgButton');
-    const sdgSection = document.getElementById('SDG-pagina');
-
-    // Hide the second part of the page initially
-    sdgSection.style.display = 'none';
-
-    // Add event listener to the radio buttons
-    radioButtons.forEach(function(radioButton) {
-        radioButton.addEventListener('click', function() {
-            // Store the selected value (if needed)
-            const selectedValue = this.value;
-        });
-    });
-
+    // Voeg event listener toe aan de SDG button
     sdgButton.addEventListener('click', function(event) {
         // Prevent default behavior (scrolling to anchor)
         event.preventDefault();
@@ -96,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 3000); // Adjust the delay (in milliseconds) as needed
         } else {
             // Show the custom alert
-            const customAlert = document.getElementById('customAlert');
             customAlert.style.display = 'block';
     
             // Scroll to the top of the page to make the alert visible
@@ -108,7 +104,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 3000); // Adjust the delay (in milliseconds) as needed
         }
     });
-    
 });
-
-
